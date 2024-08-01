@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $address = addslashes(trim($_POST["address"]));
     $course = addslashes(trim($_POST["course"]));
 
-    // Set cookies
     setcookie('lname', $lname, time() - (86400 * 30), "/"); // 86400 = 1 day
     setcookie('fname', $fname, time() - (86400 * 30), "/");
     setcookie('gender', $gender, time() - (86400 * 30), "/");
@@ -27,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit;
 }
 
-// Retrieve data from cookies if available
 // if (isset($_COOKIE['lname']) && isset($_COOKIE['fname'])&&isset($_COOKIE['gender'])&&isset($_COOKIE['email'])&&isset($_COOKIE['address'])&&isset($_COOKIE['course'])){
 //     $lname = $_COOKIE['lname'];
 //     $fname = $_COOKIE['fname'];
