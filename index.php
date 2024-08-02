@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+<?php
+
+use function PHPSTORM_META\type;
+
+    include "./connection.php";
+    include "./includes/functions.php";
+    $lname = null;
+    $fname = null;
+    $gender = null;
+    $email = null;
+    $course = null;
+    $address = null;
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $lname = filter_var($_POST["lname"], FILTER_SANITIZE_STRING);
+    $fname = filter_var($_POST["fname"], FILTER_SANITIZE_STRING);
+    $gender = filter_var($_POST["gender"], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+    $address = filter_var($_POST["address"], FILTER_SANITIZE_STRING);
+    $course = filter_var($_POST["course"], FILTER_SANITIZE_STRING);
+
+<<<<<<< HEAD
+    insertStudent($fname, $lname, $gender, $email, $address, $course);
+=======
+=======
 <?php 
 $lname = null;
 $fname = null;
@@ -14,18 +40,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $address = addslashes(trim($_POST["address"]));
     $course = addslashes(trim($_POST["course"]));
 
+>>>>>>> 78ba82f926b8b590cdc896072958dbca70dc6ca4
     setcookie('lname', $lname, time() - (86400 * 30), "/"); // 86400 = 1 day
     setcookie('fname', $fname, time() - (86400 * 30), "/");
     setcookie('gender', $gender, time() - (86400 * 30), "/");
     setcookie('email', $email, time() - (86400 * 30), "/");
     setcookie('address', $address, time() - (86400 * 30), "/");
     setcookie('course', $course, time() - (86400 * 30), "/");
+<<<<<<< HEAD
+>>>>>>> 78ba82f926b8b590cdc896072958dbca70dc6ca4
+
+=======
 
     // Refresh to load cookies
+>>>>>>> 78ba82f926b8b590cdc896072958dbca70dc6ca4
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 78ba82f926b8b590cdc896072958dbca70dc6ca4
 // if (isset($_COOKIE['lname']) && isset($_COOKIE['fname'])&&isset($_COOKIE['gender'])&&isset($_COOKIE['email'])&&isset($_COOKIE['address'])&&isset($_COOKIE['course'])){
 //     $lname = $_COOKIE['lname'];
 //     $fname = $_COOKIE['fname'];
@@ -34,6 +71,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //     $address = $_COOKIE['address'];
 //     $course = $_COOKIE['course'];
 //}
+<<<<<<< HEAD
+>>>>>>> 78ba82f926b8b590cdc896072958dbca70dc6ca4
+
+=======
 
 if (isset($_COOKIE['lname'])) $lname = $_COOKIE['lname'];
 if (isset($_COOKIE['fname'])) $fname = $_COOKIE['fname'];
@@ -41,6 +82,7 @@ if (isset($_COOKIE['gender'])) $gender = $_COOKIE['gender'];
 if (isset($_COOKIE['email'])) $email = $_COOKIE['email'];
 if (isset($_COOKIE['address'])) $address = $_COOKIE['address'];
 if (isset($_COOKIE['course'])) $course = $_COOKIE['course'];
+>>>>>>> 78ba82f926b8b590cdc896072958dbca70dc6ca4
 
 ?>
 
@@ -72,6 +114,24 @@ if (isset($_COOKIE['course'])) $course = $_COOKIE['course'];
                             </tr>
                         </thead>
                         <tbody>
+<<<<<<< HEAD
+                            <?php 
+                                $students = getStudents();
+                                foreach($students as $student ){
+                            ?>
+                            <tr>
+                                <td><?php echo $student['first_name']; ?></td>
+                                <td><?php echo $student['last_name']; ?></td>
+                                <td><?php echo $student['email']; ?></td>
+                                <td><?php echo $student['address']; ?></td>
+                                <td><?php echo $student['gender']; ?></td>
+                                <td><?php echo $student['course']; ?></td>
+                            </tr>
+
+                            <?php 
+                                }
+                            ?>
+=======
                             <tr>
                                 <td><?php echo $fname; ?></td>
                                 <td><?php echo $lname; ?></td>
@@ -80,6 +140,7 @@ if (isset($_COOKIE['course'])) $course = $_COOKIE['course'];
                                 <td><?php echo $gender; ?></td>
                                 <td><?php echo $course; ?></td>
                             </tr>
+>>>>>>> 78ba82f926b8b590cdc896072958dbca70dc6ca4
                         </tbody>
                     </table> 
                 
